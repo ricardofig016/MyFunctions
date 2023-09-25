@@ -11,7 +11,7 @@ class WordSearch(object):
         absent_chrs: str,
         min_size: int = 1,
         max_size: int = 1e10,
-        file_path: str = "portuguese_word_list.txt",
+        file_path: str = "assets/portuguese_word_list.txt",
     ) -> list:
         word_list = []
 
