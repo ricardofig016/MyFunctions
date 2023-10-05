@@ -9,7 +9,6 @@
 
 
 import random
-import math
 
 
 class Investimento(object):
