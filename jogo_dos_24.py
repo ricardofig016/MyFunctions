@@ -1,7 +1,6 @@
 import random
 
 from itertools import permutations, product
-from icecream import ic
 
 OPERATIONS = ["+", "-", "*", "/"]
 
@@ -27,17 +26,20 @@ def solve(nums):
 
 
 if __name__ == "__main__":
-    nums = [
-        random.randint(1, 20),
-        random.randint(1, 20),
-        random.randint(1, 20),
-        random.randint(1, 20),
-    ]
-    [num_perm, ops] = solve(nums)
-    if ops:
-        str = "24 = " + "(" * (len(ops) - 1) + f"{num_perm[0]}"
+    while True:
+        ops = None
+        while not ops:
+            nums = [
+                random.randint(1, 20),
+                random.randint(1, 20),
+                random.randint(1, 20),
+                random.randint(1, 20),
+            ]
+            [num_perm, ops] = solve(nums)
+
+        input(f"make 24 with {nums}")
+
+        answer = "24 = " + "(" * (len(ops) - 1) + f"{num_perm[0]}"
         for i in range(len(ops)):
-            str += f" {ops[i]} {num_perm[i+1]})"
-        print(str[:-1])
-    else:
-        print(f"no possible solutions for {nums}")
+            answer += f" {ops[i]} {num_perm[i+1]})"
+        print(answer[:-1] + "\n\n")
